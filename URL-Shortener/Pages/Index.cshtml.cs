@@ -17,9 +17,13 @@ namespace URL_Shortener.Pages
             _logger = logger;
         }
 
+        [BindProperty(SupportsGet = true)]
+        public string shorturl { get; set; }
+
         public void OnGet()
         {
-
+            string s = Request.Path.ToString();
         }
+       
     }
 }
