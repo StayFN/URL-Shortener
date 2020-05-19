@@ -1,0 +1,27 @@
+﻿@page
+@model URL_Shortener.UrlDeliveryModel
+@{
+    ViewData["Title"] = "UrlDelivery";
+}
+
+<h1>Your Short URL</h1>
+<h2> @Model.OriginalUrl</h2>
+<a href="/" class="btn btn-primary" id="shortUrl">Create another one</a>
+<button class="btn btn-primary" onclick="copyFunction">Copy t</button>
+
+@*<script>
+    function copyFunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("shortUrl");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+} 
+</script>*@
