@@ -5,34 +5,36 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-
+using URL_Shortener.Data;
+using URL_Shortener.Models;
+using Microsoft.EntityFrameworkCore;
 namespace URL_Shortener.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        [BindProperty]
-        public Models.ShortenModel Shorten { get; set; } 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-            InvalidShortUrls = new List<string> { "", "/", "/Index", "/index" };
-        }
-
-        [BindProperty]
         public string PathUrl { get; set; }
-        public List<string> InvalidShortUrls { get; set; }
-        public void OnGet()
-        {
-            PathUrl = Request.Path.ToString();
-            if (!InvalidShortUrls.Contains(PathUrl))             // Proof of Concept Redirect
 
+        public UrlModelContext db;
+        public IndexModel(UrlModelContext db) => this.db = db;
+        public List<UrlModel> UrlModels { get; set; } = new List<UrlModel>();
+
+
+        [BindProperty]
+        public Models.UrlModel ShortenModel { get; set; }
+
+        public List<string> InvalidTokens { get; set; } = new List<string>() { "", "/", "/Index", "Index", "Error" };
+
+        public async Task OnGetAsync()
+        {
+            UrlModels = await db.UrlModels.ToListAsync();
+            PathUrl = Request.Path.ToString();
+            if (!InvalidTokens.Contains(PathUrl))
             {
+
                 Response.Redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
             }
-           
         }
+
 
         public IActionResult OnPost()
         {
@@ -41,12 +43,24 @@ namespace URL_Shortener.Pages
                 return Page();
             }
 
+            db.UrlModels.Add(ShortenModel);
+            db.SaveChanges();
             // Calculate ShortUrl or Assign Custom Path
 
             //  Save Model to Database
-
-            return RedirectToPage("/UrlDelivery", new { Shorten.OriginalUrl });
+            
+            return RedirectToPage("/UrlDelivery", new { ShortenModel.OriginalUrl });
         }
+
+        public string Tokengenerator(string baseURL)
+        {
+            
+            string urlchars = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
+
+
+            return "";
+        }
+        
        
     }
 }

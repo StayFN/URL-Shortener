@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using URL_Shortener.Data;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace URL_Shortener
 {
@@ -24,6 +26,7 @@ namespace URL_Shortener
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddDbContext<UrlModelContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

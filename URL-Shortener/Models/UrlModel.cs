@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace URL_Shortener.Models
 {
-    public class ShortenModel
+    public class UrlModel
     {
-        public bool IsCustom { get; set; }
+        public int Id { get; set; }
         public string OriginalUrl { get; set; }
         public string Token { get; set; }
     }
