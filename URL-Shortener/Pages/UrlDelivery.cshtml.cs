@@ -10,10 +10,12 @@ namespace URL_Shortener
     public class UrlDeliveryModel : PageModel
     {
         [BindProperty(SupportsGet = true)]
-        public string OriginalUrl { get; set; }
+        public string DeliveryUrl { get; set; }
+
+        public string BaseUrl { get; set; }
         public void OnGet()
         {
-
+            BaseUrl = Request.Host.ToString();
         }
     }
 }

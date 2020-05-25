@@ -14,9 +14,9 @@ namespace URL_Shortener.Data
             modelBuilder.Entity<UrlModel>().HasData(
                 new UrlModel
                 {
-                    Id = 1,
-                    OriginalUrl = "https://www.youtube.com",
-                    Token = "yt"
+                    TokenId = "yt",
+
+                    OriginalUrl = "https://www.youtube.com"
                 }
                 );
             return modelBuilder;

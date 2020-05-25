@@ -17,28 +17,23 @@ namespace URL_Shortener.Data.Migrations
 
             modelBuilder.Entity("URL_Shortener.Models.UrlModel", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("TokenId")
+                        .HasColumnName("Token")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("OriginalUrl")
                         .HasColumnName("OriginalUrl")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Token")
-                        .HasColumnName("Token")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
+                    b.HasKey("TokenId");
 
                     b.ToTable("UrlModels");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            OriginalUrl = "https://www.youtube.com",
-                            Token = "yt"
+                            TokenId = "yt",
+                            OriginalUrl = "https://www.youtube.com"
                         });
                 });
 #pragma warning restore 612, 618

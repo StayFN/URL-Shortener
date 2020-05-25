@@ -12,8 +12,9 @@ namespace URL_Shortener.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<UrlModel> builder)
         {
+            builder.Property(p => p.TokenId).HasColumnName("Token");
+
             builder.Property(p => p.OriginalUrl).HasColumnName("OriginalUrl");
-            builder.Property(p => p.Token).HasColumnName("Token");
         }
     }
 }

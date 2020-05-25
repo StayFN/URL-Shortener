@@ -5,7 +5,7 @@
 }
 
 <h1>Your Short URL</h1>
-<h2> @Model.OriginalUrl</h2>
+<h2>https://@Request.Host.ToString()/@Model.DeliveryUrl</h2>
 <a href="/" class="btn btn-primary" id="shortUrl">Create another one</a>
 <button class="btn btn-primary" onclick="copyFunction">Copy t</button>
 

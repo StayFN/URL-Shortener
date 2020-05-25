@@ -10,20 +10,18 @@ namespace URL_Shortener.Data.Migrations
                 name: "UrlModels",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    OriginalUrl = table.Column<string>(nullable: true),
-                    Token = table.Column<string>(nullable: true)
+                    Token = table.Column<string>(nullable: false),
+                    OriginalUrl = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UrlModels", x => x.Id);
+                    table.PrimaryKey("PK_UrlModels", x => x.Token);
                 });
 
             migrationBuilder.InsertData(
                 table: "UrlModels",
-                columns: new[] { "Id", "OriginalUrl", "Token" },
-                values: new object[] { 1, "https://www.youtube.com", "yt" });
+                columns: new[] { "Token", "OriginalUrl" },
+                values: new object[] { "yt", "https://www.youtube.com" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

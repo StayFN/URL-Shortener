@@ -18,6 +18,7 @@ namespace URL_Shortener.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UrlModel>().HasKey(b => b.TokenId);
             modelBuilder.ApplyConfiguration(new UrlModelConfiguration()).Seed();
         }
 
