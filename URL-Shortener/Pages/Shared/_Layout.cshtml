@@ -6,43 +6,38 @@
     <title>@ViewData["Title"] - URL_Shortener</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link href="cover.css" rel="stylesheet">
+    <link href="~/css/cover.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Stungler's URL Shortener</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>                        
-                    </ul>
-                </div>
+
+<body class="text-center bg">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column w-25">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">URL Shortener</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" asp-page="/Index">Home</a>
+                </nav>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p><a href="https://github.com/StayFN/URL-Shortener">URL Shortener</a>, by <a href="https://twitter.com/realdonaldtrump">Stefan Stingl</a>.</p>
+        </header>
+
+        <div class="container">
+
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-      </footer>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p><a href="https://github.com/StayFN/URL-Shortener">URL Shortener</a>, by <a href="https://twitter.com/realdonaldtrump">Stefan Stingl</a>.</p>
+            </div>
+        </footer>
 
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
 
-    @RenderSection("Scripts", required: false)
+        @RenderSection("Scripts", required: false)
+    </div>
 </body>
 </html>

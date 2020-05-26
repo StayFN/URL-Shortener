@@ -48,7 +48,7 @@ namespace URL_Shortener.Pages
                 ShortenModel = null;
                 return Page();               
             }
-
+            
             if (db.UrlModels.Find(ShortenModel.TokenId) == null)
             {
                 db.UrlModels.Add(new UrlModel
