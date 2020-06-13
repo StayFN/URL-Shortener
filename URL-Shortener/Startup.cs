@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using URL_Shortener.Data;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore;
 
 namespace URL_Shortener
 {
@@ -22,11 +23,12 @@ namespace URL_Shortener
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddRazorPages();
-            services.AddDbContext<UrlModelContext>();
+            services.AddDbContext<UrlModelContext>();     
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
