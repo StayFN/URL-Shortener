@@ -10,6 +10,11 @@ namespace URL_Shortener.Data
 {
     public class UrlModelContext : DbContext
     {
+
+        public UrlModelContext(DbContextOptions<UrlModelContext> options) : base(options)
+        {
+
+        }
         public DbSet<UrlModel> UrlModels { get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -21,6 +26,8 @@ namespace URL_Shortener.Data
             modelBuilder.Entity<UrlModel>().HasKey(b => b.TokenId);
             modelBuilder.ApplyConfiguration(new UrlModelConfiguration()).Seed();
         }
+
+        
 
 
     }

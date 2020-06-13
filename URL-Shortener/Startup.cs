@@ -25,9 +25,8 @@ namespace URL_Shortener
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<UrlModelContext>(options => options.UseSqlite(Configuration.GetConnectionString("UrlConnection")));
             services.AddRazorPages();
-            services.AddDbContext<UrlModelContext>();     
 
         }
 
