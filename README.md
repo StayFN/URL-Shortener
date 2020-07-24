@@ -8,13 +8,6 @@ Zum automatisch starten
 * Linux noch am ende "xdg-open http://localhost:8080"
 * macOS noch am ende "open http://localhost:8080"
 
-## Docker Anleitung
-* Repository Clonen
-* Im Verzeichnis URL-Shortener/URL-Shortener: (Namen und Ports nur beispielhaft)
-  * docker build -t shortener
-  * docker run -p 8080:80 shortener
-* Im Browser aufrufen
-
 ## Anwendungsanleitung
 * In das Feld "URL" die zu kürzende URL einfügen. (z.B. https://www.youtube.com)
 * In das Feld "Custom Path" den gewünschten Kurzpfad eingeben (optional) (z.B. yt)
