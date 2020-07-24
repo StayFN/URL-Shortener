@@ -6,7 +6,7 @@ git clone https://github.com/StayFN/URL-Shortener.git && docker build -t shorten
 Zum automatisch starten
 * Windows noch am ende "start http://localhost:8080"
 * Linux noch am ende "xdg-open http://localhost:8080"
-+ macOS noch am ende "open http://localhost:8080"
+* macOS noch am ende "open http://localhost:8080"
 
 ## Docker Anleitung
 * Repository Clonen
