@@ -11,13 +11,9 @@
 git clone https://github.com/StayFN/URL-Shortener.git && docker build -t shortener ./URL-Shortener/URL-Shortener/ && docker run -p 8080:80 shortener
 
 
-
-## Docker Anleitung mit Image von DockerHub
-* docker run -p Shortener 
-
 ## Anwendungsanleitung
-* In das Feld "URL" die zu kürzende URL einfügen.
-* In das Feld "Custom Path" den gewünschten Pfad eingeben (optional)
+* In das Feld "URL" die zu kürzende URL einfügen. (z.B. https://www.youtube.com)
+* In das Feld "Custom Path" den gewünschten Kurzpfad eingeben (optional) (z.B. yt)
 * Auf den Button "Create" Klicken
 * Link Kopieren und Go
 
