@@ -17,3 +17,4 @@ Zum automatisch im Browser aufrufen:
 * Link Kopieren und Go
 * Sollte der Kurzpfad schon existieren wird er in der DB einfach mit der neuen URL überschrieben
 
+![Screenshot](https://i.imgur.com/moDKkRy.png)
