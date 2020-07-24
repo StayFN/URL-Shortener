@@ -1,6 +1,6 @@
 # URL-Shortener
 
-## Docker Anleitung ein Befehl
+## Docker Anleitung ein Befehl (Port und Name beispielhaft)
 ```console
 git clone https://github.com/StayFN/URL-Shortener.git && docker build -t shortener ./URL-Shortener/URL-Shortener/ && docker run -p 8080:80 shortener
 ```
