@@ -3,7 +3,7 @@
 ## Docker Anleitung ein Befehl
 git clone https://github.com/StayFN/URL-Shortener.git && docker build -t shortener ./URL-Shortener/URL-Shortener/ && docker run -p 8080:80 shortener
 
-Zum automatisch starten
+Zum automatisch im Browser aufrufen:
 * Windows noch am ende "start http://localhost:8080"
 * Linux noch am ende "xdg-open http://localhost:8080"
 * macOS noch am ende "open http://localhost:8080"
