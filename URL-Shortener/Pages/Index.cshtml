@@ -16,5 +16,9 @@
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block">Create</button>
     </div>
+    @if (Model.inUse == true)
+    {
+    <label class="float-left font-weight-bold">Custom Path already in use, try another!</label>
+    }
 </form>
 

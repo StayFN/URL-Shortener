@@ -18,7 +18,7 @@ namespace URL_Shortener.Pages
         public UrlModelContext db;
         public IndexModel(UrlModelContext db) => this.db = db;
         public List<UrlModel> UrlModels { get; set; } = new List<UrlModel>();
-
+        public bool inUse = false;
 
         [BindProperty]
         public Models.UrlModel ShortenModel { get; set; }
@@ -28,6 +28,7 @@ namespace URL_Shortener.Pages
         public async Task OnGetAsync()
         {
             UrlModels = await db.UrlModels.ToListAsync();
+
             PathUrl = Request.Path.ToString().TrimStart('/');
             
             if (!string.IsNullOrEmpty(PathUrl))
@@ -51,6 +52,7 @@ namespace URL_Shortener.Pages
             
             if (db.UrlModels.Find(ShortenModel.TokenId) == null)
             {
+                
                 if (ShortenModel.TokenId == null)
                 {
                     ShortenModel.TokenId = Tokengenerator();
@@ -63,12 +65,13 @@ namespace URL_Shortener.Pages
             }
             else
             {
-                db.UrlModels.Find(ShortenModel.TokenId).OriginalUrl = ShortenModel.OriginalUrl;
+                inUse = true;
+                return Page();              
             }
             db.SaveChanges();
             
             string DeliveryUrl = ShortenModel.TokenId;
-
+            inUse = false;
             ShortenModel = null;
             return RedirectToPage("/UrlDelivery", new { DeliveryUrl });
         }

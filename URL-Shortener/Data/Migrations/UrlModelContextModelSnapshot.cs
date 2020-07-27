@@ -29,12 +29,6 @@ namespace URL_Shortener.Data.Migrations
 
                     b.ToTable("UrlModels");
 
-                    b.HasData(
-                        new
-                        {
-                            TokenId = "yt",
-                            OriginalUrl = "https://www.youtube.com"
-                        });
                 });
 #pragma warning restore 612, 618
         }
