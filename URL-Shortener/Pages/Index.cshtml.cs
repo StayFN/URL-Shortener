@@ -51,6 +51,10 @@ namespace URL_Shortener.Pages
             
             if (db.UrlModels.Find(ShortenModel.TokenId) == null)
             {
+                if (ShortenModel.TokenId == null)
+                {
+                    ShortenModel.TokenId = Tokengenerator();
+                }
                 db.UrlModels.Add(new UrlModel
                 {
                     TokenId = ShortenModel.TokenId,
