@@ -15,6 +15,5 @@ Zum automatisch im Browser aufrufen:
 * In das Feld "Custom Path" den gewünschten Kurzpfad eingeben (optional) (z.B. yt)
 * Auf den Button "Create" Klicken
 * Link Kopieren und Go
-* Sollte der Kurzpfad schon existieren wird er in der DB einfach mit der neuen URL überschrieben
 
 ![Screenshot](https://i.imgur.com/moDKkRy.png)
