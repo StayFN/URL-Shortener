@@ -13,7 +13,7 @@ To automatically open in your browser add * to the end of the command:
 ## Manual
 * insert the URL you want to shorten in the "URL"-Field (example: https://www.youtube.com)
 * Insert the shortened "Custom Path" (if you leave it empty it will generate one for you)
-* Click "Create" Klicken
+* Click "Create"
 * Copy the Link and Go
 
 ![Screenshot](https://i.imgur.com/moDKkRy.png)
